@@ -61,9 +61,9 @@ nginx -g 'daemon off;' &
 
 VNC_ARGS="-display :99 -forever -rfbport 5900 -shared"
 if [ -n "$VNC_PASSWORD" ]; then
-    mkdir -p ~/.vnc
-    x11vnc -storepasswd "$VNC_PASSWORD" ~/.vnc/passwd
-    VNC_ARGS="$VNC_ARGS -rfbauth ~/.vnc/passwd"
+    mkdir -p /root/.vnc
+    x11vnc -storepasswd "$VNC_PASSWORD" /root/.vnc/passwd
+    VNC_ARGS="$VNC_ARGS -rfbauth /root/.vnc/passwd"
 else
     VNC_ARGS="$VNC_ARGS -nopw"
 fi
