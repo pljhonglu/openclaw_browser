@@ -53,20 +53,8 @@ chromium \
   --no-first-run \
   --no-default-browser-check \
   --disable-gpu \
-  --start-maximized \
   --no-sandbox \
-  --kiosk \
-  --disable-pinch \
-  --overscroll-history-navigation=0 \
-  --disable-features=TranslateUI \
-  --disable-component-update \
-  --disable-background-networking \
-  --disable-default-apps \
-  --disable-extensions \
-  --disable-sync \
-  --metrics-recording-only \
-  --disable-translate \
-  --safebrowsing-disable-auto-update &
+  --kiosk &
 sleep 2
 
 nginx -g 'daemon off;' &
