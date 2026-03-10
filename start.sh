@@ -39,6 +39,11 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/dbus/system_bus_socket"
 rm -f /tmp/.X99-lock
 rm -f /tmp/.X11-unix/X99
 
+# Clean up Chromium profile lock files
+rm -f /data/chrome-profile/SingletonLock
+rm -f /data/chrome-profile/SingletonSocket
+rm -f /data/chrome-profile/SingletonCookie
+
 Xvfb :99 -screen 0 ${WIDTH}x${HEIGHT}x24 -ac &
 export DISPLAY=:99
 sleep 1
