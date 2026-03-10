@@ -35,6 +35,10 @@ mkdir -p /run/dbus && rm -f /run/dbus/pid
 dbus-daemon --system --fork --nopidfile 2>/dev/null || true
 export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/dbus/system_bus_socket"
 
+# Clean up X server lock files
+rm -f /tmp/.X99-lock
+rm -f /tmp/.X11-unix/X99
+
 Xvfb :99 -screen 0 ${WIDTH}x${HEIGHT}x24 -ac &
 export DISPLAY=:99
 sleep 1
