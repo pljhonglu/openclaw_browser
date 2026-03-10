@@ -63,8 +63,10 @@ chromium \
   --disable-extensions \
   --disable-sync \
   --metrics-recording-only \
-  --no-first-run \
-  --safebrowsing-disable-auto-update &
+  --safebrowsing-disable-auto-update \
+  --disable-features=UseOzonePlatform \
+  --ozone-platform=x11 \
+  --disable-power-monitor &
 sleep 2
 
 nginx -g 'daemon off;' &
