@@ -54,7 +54,8 @@ chromium \
   --no-default-browser-check \
   --disable-gpu \
   --no-sandbox \
-  --kiosk &
+  --start-maximized \
+  about:blank &
 sleep 2
 
 nginx -g 'daemon off;' &
