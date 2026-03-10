@@ -25,7 +25,23 @@ A Docker container running Chromium with Chrome DevTools Protocol (CDP) and noVN
 
 ## Quick Start
 
-### Docker
+### Using Pre-built Image from GitHub Container Registry
+
+```bash
+# Pull the latest image
+docker pull ghcr.io/pljhonglu/openclaw_browser:main
+
+# Run with default settings
+docker run -p 9222:9222 -p 6080:6080 ghcr.io/pljhonglu/openclaw_browser:main
+
+# Run with custom resolution
+docker run -e WIDTH=1280 -e HEIGHT=720 -p 9222:9222 -p 6080:6080 ghcr.io/pljhonglu/openclaw_browser:main
+
+# Run with password protection
+docker run -e VNC_PASSWORD="your_password" -e CDP_TOKEN="your_token" -p 9222:9222 -p 6080:6080 ghcr.io/pljhonglu/openclaw_browser:main
+```
+
+### Building Locally
 
 ```bash
 # Build the image
@@ -33,12 +49,6 @@ docker build -t openclaw-browser .
 
 # Run with default settings
 docker run -p 9222:9222 -p 6080:6080 openclaw-browser
-
-# Run with custom resolution
-docker run -e WIDTH=1280 -e HEIGHT=720 -p 9222:9222 -p 6080:6080 openclaw-browser
-
-# Run with password protection
-docker run -e VNC_PASSWORD="your_password" -e CDP_TOKEN="your_token" -p 9222:9222 -p 6080:6080 openclaw-browser
 ```
 
 ## Usage
