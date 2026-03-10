@@ -54,7 +54,17 @@ chromium \
   --no-default-browser-check \
   --disable-gpu \
   --start-maximized \
-  --no-sandbox &
+  --no-sandbox \
+  --disable-dev-shm-usage \
+  --disable-features=VizDisplayCompositor \
+  --disable-software-rasterizer \
+  --disable-background-networking \
+  --disable-default-apps \
+  --disable-extensions \
+  --disable-sync \
+  --metrics-recording-only \
+  --no-first-run \
+  --safebrowsing-disable-auto-update &
 sleep 2
 
 nginx -g 'daemon off;' &
