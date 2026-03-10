@@ -39,6 +39,9 @@ docker run -e WIDTH=1280 -e HEIGHT=720 -p 9222:9222 -p 6080:6080 ghcr.io/pljhong
 
 # Run with password protection
 docker run -e VNC_PASSWORD="your_password" -e CDP_TOKEN="your_token" -p 9222:9222 -p 6080:6080 ghcr.io/pljhonglu/openclaw_browser:main
+
+# Run with persistent Chrome profile (mount to local path)
+docker run -v /path/on/host:/data/chrome-profile -p 9222:9222 -p 6080:6080 ghcr.io/pljhonglu/openclaw_browser:main
 ```
 
 ### Building Locally
