@@ -54,24 +54,12 @@ chromium \
   --no-default-browser-check \
   --disable-gpu \
   --start-maximized \
-  --no-sandbox \
-  --disable-dev-shm-usage \
-  --disable-features=VizDisplayCompositor \
-  --disable-software-rasterizer \
-  --disable-background-networking \
-  --disable-default-apps \
-  --disable-extensions \
-  --disable-sync \
-  --metrics-recording-only \
-  --safebrowsing-disable-auto-update \
-  --disable-features=UseOzonePlatform \
-  --ozone-platform=x11 \
-  --disable-power-monitor &
+  --no-sandbox &
 sleep 2
 
 nginx -g 'daemon off;' &
 
-VNC_ARGS="-display :99 -forever -rfbport 5900 -shared -clipboard"
+VNC_ARGS="-display :99 -forever -rfbport 5900 -shared"
 if [ -n "$VNC_PASSWORD" ]; then
     mkdir -p ~/.vnc
     x11vnc -storepasswd "$VNC_PASSWORD" ~/.vnc/passwd
